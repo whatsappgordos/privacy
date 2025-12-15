@@ -1,48 +1,65 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DESCONTO</title>
-  
+  <title>DESCONTO EXCLUSIVO</title>
 
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
+  <script>
+    window.pixelId = "6940835eb255084d7550ca1a";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #ffffff;
       color: #333333;
-      padding-bottom: 100px; /* espaço pro botão fixo */
+      padding-bottom: 100px; /* espaço para o botão fixo */
     }
 
     .container {
       max-width: 500px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 20px 20px 0 20px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .logo {
-      width: 180px;
+      width: 150px; /* Ajustado para SVG */
       margin-bottom: 20px;
-    }
-
-    .small-video {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 10px;
-      margin: 15px auto 25px auto;
       display: block;
     }
 
     .banner {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      object-fit: cover;
     }
 
     .message {
       font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 30px;
+      text-align: left; /* Melhora leitura */
     }
 
     .highlight {
@@ -50,52 +67,68 @@
       font-weight: bold;
     }
 
+    /* Botão Fixo Pulsante */
     .cta-button {
-      background-color: #f15a24;
+      background: linear-gradient(135deg, #f15a24 0%, #ff7b4d 100%);
       color: white;
       border: none;
       padding: 18px 25px;
-      font-size: 1.1rem;
-      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 50px;
       cursor: pointer;
       text-decoration: none;
-      display: inline-block;
-      box-shadow: 0 0 15px rgba(241, 90, 36, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(241, 90, 36, 0.5);
       animation: pulse 1.5s infinite;
+      
+      /* Fixação */
       position: fixed;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
+      width: 90%;
+      max-width: 400px;
       z-index: 1000;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     @keyframes pulse {
       0% {
+        box-shadow: 0 0 0 0 rgba(241, 90, 36, 0.7);
         transform: translateX(-50%) scale(1);
-        box-shadow: 0 0 10px rgba(241, 90, 36, 0.6);
       }
-      50% {
-        transform: translateX(-50%) scale(1.08);
-        box-shadow: 0 0 25px rgba(241, 90, 36, 0.9);
+      70% {
+        box-shadow: 0 0 0 15px rgba(241, 90, 36, 0);
+        transform: translateX(-50%) scale(1.02);
       }
       100% {
+        box-shadow: 0 0 0 0 rgba(241, 90, 36, 0);
         transform: translateX(-50%) scale(1);
-        box-shadow: 0 0 10px rgba(241, 90, 36, 0.6);
       }
     }
 
     .taxa {
-      margin-top: 20px;
+      margin-top: 10px;
+      font-size: 0.9rem;
       font-weight: bold;
-      color: red;
+      color: #d32f2f;
+      background: #ffebee;
+      padding: 10px;
+      border-radius: 8px;
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="images/logo_privacy.webp" alt="Privacy Logo" class="logo">
 
-    <video class="banner" autoplay="" muted="" loop="" playsinline="">
+  <div class="container">
+    <img src="media/privacy-logo.svg" alt="Privacy" class="logo">
+
+    <video class="banner" autoplay muted loop playsinline>
       <source src="media/juliana3.mp4" type="video/mp4">
       Seu navegador não suporta vídeo.
     </video>
@@ -109,13 +142,37 @@
     </div>
 
     <div class="taxa">
-      Oferta única. Liberado imediatamente após o pagamento.
+      🔥 Oferta única. Liberado imediatamente.
     </div>
   </div>
 
-  <a href="https://pay.sunize.com.br/gNXNYHPi" class="cta-button">
-    LIBERAR VÍDEO
+  <a href="#" class="cta-button" id="botao-compra">
+    QUERO LIBERAR O VÍDEO
   </a>
 
+  <script>
+    // ▼ ▼ ▼ ALTERE O LINK AQUI ▼ ▼ ▼
+    const linkCheckout = "https://pay.sunize.com.br/gNXNYHPi";
+    // ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲ ▲
 
-</body></html>
+    // Função que configura o botão e carrega os UTMs (rastreio)
+    document.addEventListener("DOMContentLoaded", function() {
+      const btn = document.getElementById('botao-compra');
+      
+      // Pega os parâmetros da URL atual (ex: ?utm_source=face...)
+      const params = window.location.search;
+      
+      // Verifica se o link já tem '?' para concatenar corretamente
+      const separador = linkCheckout.includes('?') ? '&' : '?';
+      
+      // Monta o link final
+      if(params) {
+        btn.href = linkCheckout + separador + params.substring(1);
+      } else {
+        btn.href = linkCheckout;
+      }
+    });
+  </script>
+
+</body>
+</html>
