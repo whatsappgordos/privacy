@@ -29,29 +29,22 @@
   </script>
 
   <script>
-    // Define o destino do botão voltar para a pasta interna
-    const link = '/inicio/desconto/';
+    (function() {
+        // Pega a URL base do site e adiciona o caminho do desconto
+        // Isso garante que funcione independente de onde o site esteja hospedado
+        const targetUrl = window.location.origin + '/inicio/desconto/' + window.location.search;
 
-    function setBackRedirect(url) {
-      let urlBackRedirect = url;
-      // Garante que os parâmetros UTM continuem na URL
-      urlBackRedirect = urlBackRedirect.trim() +
-        (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
-        document.location.search.replace('?', '').toString();
+        // Empurra o estado atual para o histórico
+        history.pushState({}, "", location.href);
+        history.pushState({}, "", location.href);
 
-      history.pushState({}, '', location.href);
-      history.pushState({}, '', location.href);
-      history.pushState({}, '', location.href);
-
-      window.addEventListener('popstate', () => {
-        console.log('Redirecionando para:', urlBackRedirect);
-        setTimeout(() => {
-          location.href = urlBackRedirect;
-        }, 1);
-      });
-    }
-
-    setBackRedirect(link);
+        // Quando o usuário clicar em voltar, redireciona
+        window.onpopstate = function () {
+            setTimeout(function () {
+                location.href = targetUrl;
+            }, 1);
+        };
+    })();
   </script>
 
   <style type="text/css">
